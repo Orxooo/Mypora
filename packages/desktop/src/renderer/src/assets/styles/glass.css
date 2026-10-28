@@ -1,0 +1,697 @@
+@media screen {
+  html.marktext-glass {
+    --titleBarHeight: 78px;
+    --glass-toolbar-height: 54px;
+    --glass-radius-panel: 26px;
+    --glass-radius-group: 20px;
+    --glass-radius-control: 12px;
+    --glass-radius-row: 14px;
+    --el-border-radius-base: 12px;
+    --el-border-radius-small: 10px;
+    --el-color-primary: var(--glass-accent);
+    --glass-chrome: rgba(244, 247, 251, 0.46);
+    --glass-sidebar: rgba(240, 244, 249, 0.28);
+    --glass-paper: color-mix(in srgb, var(--editorBgColor) 96%, transparent);
+    --glass-float: rgba(250, 252, 255, 0.86);
+    --glass-rim: rgba(255, 255, 255, 0.88);
+    --glass-border: rgba(40, 53, 73, 0.09);
+    --glass-shadow: 0 6px 24px rgba(27, 43, 62, 0.07);
+    --glass-control: rgba(255, 255, 255, 0.54);
+    --glass-selected: rgba(57, 111, 189, 0.12);
+    --glass-accent: #3667a8;
+    --themeColor: var(--glass-accent);
+    --themeColor10: color-mix(in srgb, var(--glass-accent) 10%, transparent);
+    --themeColor20: color-mix(in srgb, var(--glass-accent) 20%, transparent);
+    --themeColor30: color-mix(in srgb, var(--glass-accent) 30%, transparent);
+    --themeColor40: color-mix(in srgb, var(--glass-accent) 40%, transparent);
+    --themeColor50: color-mix(in srgb, var(--glass-accent) 50%, transparent);
+    --themeColor60: color-mix(in srgb, var(--glass-accent) 60%, transparent);
+    --themeColor70: color-mix(in srgb, var(--glass-accent) 70%, transparent);
+    --themeColor80: color-mix(in srgb, var(--glass-accent) 80%, transparent);
+    --themeColor90: color-mix(in srgb, var(--glass-accent) 90%, transparent);
+
+    --highlightThemeColor: var(--glass-accent);
+    --focusColor: var(--glass-accent);
+    --selectionColor: var(--glass-selected);
+    background: transparent;
+  }
+
+  html.marktext-glass[data-glass-tone='dark'] {
+    --glass-chrome: rgba(31, 36, 45, 0.5);
+    --glass-sidebar: rgba(31, 36, 45, 0.26);
+    --glass-paper: color-mix(in srgb, var(--editorBgColor) 96%, transparent);
+    --glass-float: color-mix(in srgb, var(--editorBgColor) 88%, transparent);
+    --glass-rim: rgba(255, 255, 255, 0.13);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+    --glass-control: rgba(255, 255, 255, 0.07);
+    --glass-selected: rgba(130, 176, 235, 0.17);
+    --glass-accent: #99bff0;
+  }
+
+  .marktext-glass body,
+  .marktext-glass #app,
+  .marktext-glass .editor-container,
+  .marktext-glass .editor-middle,
+  .marktext-glass .editor-with-tabs {
+    background: transparent;
+  }
+
+  .marktext-glass .editor-middle {
+    min-width: 0;
+  }
+
+  .marktext-glass .title-bar-editor-bg {
+    background: transparent;
+    flex-shrink: 0;
+  }
+
+  .marktext-glass .title-bar {
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    height: var(--glass-toolbar-height);
+    border: 1px solid var(--glass-rim);
+    border-radius: 22px;
+    overflow: hidden;
+    background: var(--glass-chrome);
+    backdrop-filter: blur(28px) saturate(145%);
+    box-shadow: inset 0 1px 0 var(--glass-rim);
+  }
+
+  .marktext-glass .title-bar .title {
+    line-height: var(--glass-toolbar-height);
+    font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.01em;
+  }
+
+  .marktext-glass .title-bar .filename {
+    font-weight: 600;
+    color: var(--editorColor);
+  }
+
+  .marktext-glass .title-bar .path-arrow {
+    opacity: 0.45;
+    margin: 0 3px;
+  }
+
+  .marktext-glass .title-bar .document-statistics-trigger.el-button.is-text {
+    height: 34px;
+    line-height: 20px;
+    border: 1px solid var(--glass-rim);
+    border-radius: var(--glass-radius-control);
+    background: var(--glass-control);
+    padding: 6px 12px;
+    margin-right: 9px;
+    box-shadow: 0 2px 8px rgba(25, 40, 60, 0.04);
+    font-size: 11px;
+  }
+
+  .marktext-glass .side-bar {
+    height: calc(100vh - 90px);
+    padding-top: 0;
+    margin: 78px 0 12px 12px;
+    background: var(--glass-sidebar);
+    border: 1px solid var(--glass-rim);
+    border-radius: var(--glass-radius-panel);
+    box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-rim);
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif;
+  }
+
+  .marktext-glass .sidebar-header,
+  .marktext-glass .sidebar-footer {
+    padding: 13px;
+  }
+
+  .marktext-glass .sidebar-title {
+    font-size: 11px;
+    font-weight: 650;
+    letter-spacing: 0.08em;
+    color: var(--sideBarTextColor);
+  }
+
+  .marktext-glass .sidebar-header button,
+  .marktext-glass .sidebar-footer button {
+    border-radius: 10px;
+    background: var(--glass-control);
+    border: 1px solid var(--glass-rim);
+    box-shadow: 0 2px 6px rgba(25, 40, 60, 0.03);
+  }
+
+  .marktext-glass .side-bar-file,
+  .marktext-glass .opened-file {
+    margin: 2px 10px;
+    border-radius: var(--glass-radius-row);
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+  }
+
+  .marktext-glass .side-bar-file.current,
+  .marktext-glass .opened-file.current {
+    background: var(--glass-selected);
+    box-shadow: inset 0 1px 0 var(--glass-rim);
+    color: var(--glass-accent);
+  }
+
+  .marktext-glass .editor-with-tabs > .container {
+    margin: 2px 12px 12px;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--glass-radius-panel);
+    background: var(--glass-paper);
+    box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-rim);
+  }
+
+  .marktext-glass .editor-tabs {
+    flex-shrink: 0;
+    height: 42px;
+    padding: 3px 14px 7px;
+    box-sizing: border-box;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  .marktext-glass .tabs-container > li {
+    border-radius: 11px;
+    margin-right: 5px;
+    padding-left: 12px;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+  }
+
+  .marktext-glass .tabs-container > li.active {
+    background: var(--glass-control);
+    border-color: var(--glass-rim);
+    color: var(--editorColor);
+    box-shadow: 0 2px 8px rgba(25, 40, 60, 0.06);
+  }
+
+  .marktext-glass .tabs-container > li.active::after {
+    display: none;
+  }
+
+  .marktext-glass .editor-tabs > .new-file {
+    opacity: 0.65;
+    border-radius: 11px;
+  }
+
+  .marktext-glass .document-outline {
+    background: transparent;
+  }
+
+  .marktext-glass .outline-toggle {
+    border-radius: 10px;
+  }
+
+  .marktext-glass .mu-container h1 {
+    letter-spacing: -0.035em;
+  }
+
+  .marktext-glass .mu-container pre,
+  .marktext-glass .mu-code-block {
+    border-radius: 12px;
+  }
+
+  .marktext-glass .el-dialog,
+  .marktext-glass .el-popper,
+  .marktext-glass .mu-float {
+    border-radius: var(--glass-radius-group);
+    background: var(--glass-float);
+    backdrop-filter: blur(30px) saturate(140%);
+    border: 1px solid var(--glass-rim);
+    box-shadow: 0 16px 48px rgba(20, 32, 50, 0.16);
+  }
+
+  .marktext-glass ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background: transparent;
+  }
+
+  .marktext-glass ::-webkit-scrollbar-thumb {
+    border: 2px solid transparent;
+    border-radius: 4px;
+    background-clip: padding-box;
+    background-color: color-mix(in srgb, var(--editorColor) 24%, transparent);
+  }
+
+  .marktext-glass button:focus-visible {
+    outline: 2px solid var(--glass-accent);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-transparency: reduce) {
+    html.marktext-glass {
+      --glass-chrome: var(--editorBgColor);
+      --glass-sidebar: var(--sideBarBgColor);
+      --glass-paper: var(--editorBgColor);
+      --glass-float: var(--editorBgColor);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marktext-glass .title-bar,
+    .marktext-glass .tabs-container > li {
+      transition: none;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .marktext-glass .title-bar .title {
+      padding-left: 90px;
+      padding-right: 130px;
+    }
+    .marktext-glass .editor-with-tabs > .container {
+      margin: 2px 7px 7px;
+      border-radius: 12px;
+    }
+  }
+}
+
+@media screen {
+  .marktext-glass .pref-container {
+    --prefSideBarWidth: 216px;
+    background: transparent;
+    font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif;
+  }
+
+  .marktext-glass .pref-sidebar {
+    width: calc(var(--prefSideBarWidth) - 12px);
+    height: calc(100vh - 90px);
+    margin: 78px 12px 12px 12px;
+    padding: 22px 0 16px;
+    background: var(--glass-sidebar);
+    border: 1px solid var(--glass-rim);
+    border-radius: var(--glass-radius-panel);
+    box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-rim);
+    overflow: hidden;
+  }
+
+  .marktext-glass .pref-sidebar h3.title {
+    text-align: left;
+    padding: 0 24px;
+    font-size: 20px;
+    font-weight: 650;
+    letter-spacing: -0.03em;
+  }
+
+  .marktext-glass .pref-sidebar .search-wrapper {
+    margin: 18px 0 12px;
+  }
+
+  .marktext-glass .pref-sidebar .category {
+    padding: 0 12px;
+  }
+
+  .marktext-glass .pref-sidebar .category .item {
+    appearance: none;
+    border: 1px solid transparent;
+    border-radius: var(--glass-radius-row);
+    background: transparent;
+    height: 44px;
+    margin: 4px 0;
+    padding: 0 12px;
+    font-family: inherit;
+    font-size: 13px;
+    text-align: left;
+    transition: background-color 140ms ease, box-shadow 140ms ease;
+  }
+
+  .marktext-glass .pref-sidebar .category .item:hover {
+    background: var(--glass-control);
+  }
+
+  .marktext-glass .pref-sidebar .category .item.active {
+    background: var(--glass-selected);
+    border-color: var(--glass-rim);
+    color: var(--glass-accent);
+    font-weight: 600;
+    box-shadow: 0 3px 10px rgba(25, 40, 60, 0.04);
+  }
+
+  .marktext-glass .pref-sidebar .category .item.active svg {
+    color: var(--glass-accent);
+  }
+
+  .marktext-glass .pref-sidebar .category .item::before {
+    display: none;
+  }
+
+  .marktext-glass .pref-container .pref-content {
+    min-width: 0;
+    max-width: none;
+    min-height: 0;
+    margin: 78px 12px 12px 0;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--glass-radius-panel);
+    background: var(--glass-paper);
+    box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-rim);
+    overflow: hidden;
+  }
+
+  .marktext-glass .pref-container .pref-content .pref-setting {
+    box-sizing: border-box;
+    margin-top: 0;
+    min-height: 0;
+    height: auto;
+    padding: 28px 28px 36px;
+    scrollbar-gutter: stable;
+  }
+
+  .marktext-glass .pref-setting > h4 {
+    font-size: 24px;
+    font-weight: 650;
+    letter-spacing: -0.035em;
+    margin: 0 0 24px;
+  }
+
+  .marktext-glass .pref-setting > :is(.pref-compound-item, .pref-select-item, .pref-switch-item, .pref-range-item, .pref-font-input-item, .pref-text-box-item, .image-ctrl, .custom-css) {
+    box-sizing: border-box;
+    margin: 16px 0;
+    padding: 18px 20px;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--glass-radius-group);
+    background: color-mix(in srgb, var(--editorColor) 2%, transparent);
+  }
+
+  .marktext-glass .pref-compound-item .pref-compound-head h6.title {
+    margin: 0 0 12px;
+    padding-bottom: 0;
+    font-size: 14px;
+    font-weight: 650;
+  }
+
+  .marktext-glass .pref-compound-body {
+    margin-top: 0;
+  }
+
+  .marktext-glass .pref-compound-body > :last-child {
+    margin-bottom: 0;
+  }
+
+  .marktext-glass .pref-compound-body > :first-child {
+    margin-top: 0;
+  }
+
+  .marktext-glass .pref-container .description {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .marktext-glass .pref-container .notes {
+    margin-top: 8px;
+    color: var(--editorColor60);
+    font-style: normal;
+    font-size: 12px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+  }
+
+  .marktext-glass .pref-switch-item {
+    gap: 16px;
+    min-height: 32px;
+  }
+
+  .marktext-glass .pref-switch-item .description {
+    flex-wrap: wrap;
+    min-width: 0;
+  }
+
+  .marktext-glass .pref-separator {
+    background: transparent;
+    margin: 8px 0;
+  }
+
+  .marktext-glass .el-input__wrapper,
+  .marktext-glass .el-select__wrapper,
+  .marktext-glass .el-textarea__inner,
+  .marktext-glass .custom-css-input {
+    border-radius: var(--glass-radius-control);
+    min-height: 38px;
+    box-sizing: border-box;
+    background: color-mix(in srgb, var(--editorBgColor) 82%, transparent);
+    box-shadow: inset 0 0 0 1px var(--glass-border);
+    color: var(--editorColor);
+  }
+
+  .marktext-glass .el-input__wrapper.is-focus,
+  .marktext-glass .el-select__wrapper.is-focused,
+  .marktext-glass .el-textarea__inner:focus,
+  .marktext-glass .custom-css-input:focus-visible {
+    box-shadow: inset 0 0 0 2px var(--glass-accent);
+    outline: none;
+  }
+
+  .marktext-glass .el-select-dropdown,
+  .marktext-glass .el-dropdown-menu {
+    background: transparent;
+    border-radius: var(--glass-radius-group);
+  }
+
+  .marktext-glass .el-select-dropdown__list,
+  .marktext-glass .el-autocomplete-suggestion__list,
+  .marktext-glass .el-dropdown-menu {
+    padding: 6px;
+  }
+
+  .marktext-glass .el-select-dropdown__item,
+  .marktext-glass .el-autocomplete-suggestion li,
+  .marktext-glass .el-dropdown-menu__item {
+    border-radius: 11px;
+    margin: 2px 0;
+    min-height: 34px;
+    line-height: 34px;
+  }
+
+  .marktext-glass .el-button {
+    border-radius: var(--glass-radius-control);
+    min-height: 36px;
+    box-sizing: border-box;
+    font-weight: 500;
+  }
+
+  .marktext-glass .el-button--small {
+    border-radius: 10px;
+    min-height: 30px;
+  }
+
+  .marktext-glass .el-switch {
+    flex-shrink: 0;
+  }
+
+  .marktext-glass .el-switch .el-switch__core {
+    min-width: 42px;
+    height: 24px;
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--editorColor) 16%, transparent);
+  }
+
+  .marktext-glass .el-switch.is-checked .el-switch__core {
+    background: var(--glass-accent);
+    border-color: var(--glass-accent);
+  }
+
+  .marktext-glass .el-switch .el-switch__action {
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14);
+  }
+
+  .marktext-glass .el-switch.is-checked .el-switch__action {
+    left: calc(100% - 20px);
+  }
+
+  .marktext-glass .el-slider__button {
+    width: 16px;
+    height: 16px;
+    border-radius: 5px;
+    border: 2px solid var(--glass-accent);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  }
+
+  .marktext-glass .el-tag {
+    border-radius: 9px;
+    min-height: 28px;
+  }
+
+  .marktext-glass .pref-theme .offcial-themes {
+    gap: 16px;
+  }
+
+  .marktext-glass .pref-theme .offcial-themes .theme {
+    border-radius: var(--glass-radius-group);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 12px rgba(20, 32, 50, 0.07);
+    transition: box-shadow 150ms ease, border-color 150ms ease;
+  }
+
+  .marktext-glass .pref-theme .offcial-themes .theme.active,
+  .marktext-glass .pref-theme .offcial-themes .theme:focus-visible {
+    border-color: var(--glass-accent);
+    outline: 2px solid var(--glass-accent);
+    outline-offset: 3px;
+  }
+
+  .marktext-glass .pref-theme .custom-css-input {
+    width: 100%;
+    padding: 14px;
+    margin-top: 12px;
+    border: 1px solid var(--glass-border);
+    resize: vertical;
+    font-family: 'SFMono-Regular', Menlo, monospace;
+    line-height: 1.6;
+  }
+
+  .marktext-glass .pref-container .el-table {
+    border-radius: var(--glass-radius-group);
+    border: 1px solid var(--glass-border);
+    overflow: hidden;
+    margin-top: 18px;
+  }
+
+  .marktext-glass .pref-container .el-table th.el-table__cell {
+    background: var(--glass-control);
+    font-size: 12px;
+    height: 44px;
+  }
+
+  .marktext-glass .pref-container .el-table td.el-table__cell {
+    padding: 10px 0;
+  }
+
+  .marktext-glass .el-message-box,
+  .marktext-glass .el-notification {
+    border-radius: var(--glass-radius-group);
+    background: var(--glass-float);
+    border: 1px solid var(--glass-rim);
+    backdrop-filter: blur(30px) saturate(140%);
+  }
+
+  .marktext-glass .outline-toggle,
+  .marktext-glass .sidebar-header button,
+  .marktext-glass .sidebar-footer button {
+    width: 34px;
+    height: 34px;
+    border-radius: 12px;
+  }
+
+  .marktext-glass .tabs-container > li,
+  .marktext-glass .editor-tabs > .new-file,
+  .marktext-glass .tabs-container,
+  .marktext-glass .scrollable-tabs {
+    height: 32px;
+    line-height: 32px;
+  }
+
+  .marktext-glass .tabs-container > li > .close-icon {
+    top: 5px;
+    right: 5px;
+    border-radius: 6px;
+  }
+
+  .marktext-glass .tabs-container > li > .unsaved-dot {
+    top: 12px;
+  }
+
+  @media (max-width: 760px) {
+    .marktext-glass .pref-container {
+      --prefSideBarWidth: 180px;
+    }
+    .marktext-glass .pref-container .pref-content .pref-setting {
+      padding: 22px 18px 28px;
+    }
+    .marktext-glass .pref-theme .offcial-themes {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .marktext-glass .pref-theme .mode-themes-row {
+      flex-direction: column;
+    }
+    .marktext-glass .pref-theme .mode-themes-row > * {
+      width: 100%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marktext-glass .pref-sidebar .category .item,
+    .marktext-glass .pref-theme .offcial-themes .theme {
+      transition: none;
+    }
+  }
+}
+
+@media screen {
+  .marktext-glass .side-bar-file.current::before,
+  .marktext-glass .side-bar-file.active::before {
+    display: none;
+  }
+  .marktext-glass .pref-sidebar .category {
+    min-height: 0;
+  }
+}
+
+@media screen {
+  /* Bundled themes force legacy dividers and tab fills with !important. */
+  .marktext-glass .side-bar {
+    border-right: 1px solid var(--glass-rim) !important;
+  }
+
+  .marktext-glass .editor-tabs::after,
+  .marktext-glass .editor-tabs ul.tabs-container::after {
+    content: none;
+    display: none;
+  }
+
+  .marktext-glass .tabs-container > li {
+    background: transparent !important;
+  }
+
+  .marktext-glass .tabs-container > li.active {
+    background: var(--glass-control) !important;
+  }
+
+  .marktext-glass .mu-container .mu-code-block,
+  .marktext-glass .mu-container .mu-frontmatter,
+  .marktext-glass .mu-container .mu-html-container,
+  .marktext-glass .mu-container .mu-math-container,
+  .marktext-glass .mu-container .mu-diagram-container {
+    border-radius: 24px;
+    padding: 24px;
+  }
+
+  .marktext-glass .mu-container .mu-code-block {
+    padding-right: 52px;
+  }
+
+  .marktext-glass .mu-code-copy {
+    top: 14px;
+    right: 14px;
+    width: 28px;
+    height: 28px;
+    border-radius: 10px;
+  }
+
+  .marktext-glass .mu-container table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid var(--tableBorderColor);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .marktext-glass .mu-container table :is(th, td) {
+    border-width: 0 1px 1px 0;
+  }
+
+  .marktext-glass .mu-container table tr > :last-child {
+    border-right-width: 0;
+  }
+
+  .marktext-glass .mu-container table tbody tr:last-child td {
+    border-bottom-width: 0;
+  }
+}
