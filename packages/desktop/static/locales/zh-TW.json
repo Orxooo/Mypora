@@ -279,7 +279,8 @@
       "lastModified": "修改時間",
       "unavailable": "—",
       "open": "開啟文件統計"
-    }
+    },
+    "newDocument": "新增"
   },
   "commandPalette": {
     "placeholder": "輸入要執行的命令",

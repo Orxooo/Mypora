@@ -279,7 +279,8 @@
       "lastModified": "Изменён",
       "unavailable": "—",
       "open": "Открыть статистику документа"
-    }
+    },
+    "newDocument": "Создать"
   },
   "commandPalette": {
     "placeholder": "Введите команду",

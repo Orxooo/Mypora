@@ -50,7 +50,51 @@
           </span>
         </span>
       </div>
-      <div :class="showCustomTitleBar ? 'left-toolbar title-no-drag' : 'right-toolbar'">
+      <div
+        v-if="isOsx"
+        class="glass-navigation title-no-drag"
+      >
+        <icon-tooltip :content="t('sideBar.icons.files')">
+          <button
+            type="button"
+            class="plain-button glass-action glass-sidebar-toggle"
+            :aria-label="t('sideBar.icons.files')"
+            :aria-pressed="showSideBar"
+            @click="layoutStore.SET_LAYOUT({ showSideBar: !showSideBar })"
+          >
+            <FolderOpened aria-hidden="true" />
+          </button>
+        </icon-tooltip>
+      </div>
+      <div
+        :class="[
+          showCustomTitleBar ? 'left-toolbar title-no-drag' : 'right-toolbar',
+          { 'mac-toolbar': isOsx }
+        ]"
+      >
+        <div
+          v-if="isOsx"
+          class="glass-quick-actions title-no-drag"
+        >
+          <button
+            type="button"
+            class="plain-button glass-action glass-new-document"
+            :aria-label="t('menu.file.newTab')"
+            @click="editorStore.NEW_UNTITLED_TAB({})"
+          >
+            <Plus aria-hidden="true" />
+            <span class="quick-action-label">{{ t('titleBar.newDocument') }}</span>
+          </button>
+          <button
+            type="button"
+            class="plain-button glass-action glass-settings"
+            :aria-label="t('sideBar.icons.settings')"
+            @click="projectStore.OPEN_SETTING_WINDOW()"
+          >
+            <Setting aria-hidden="true" />
+            <span class="quick-action-label">{{ t('sideBar.icons.settings') }}</span>
+          </button>
+        </div>
         <button
           v-if="showCustomTitleBar"
           type="button"
@@ -155,8 +199,9 @@ import { shouldShowInAppTitleBar } from './visibility'
 import { pathBreadcrumb } from './pathBreadcrumb'
 import { buildWindowTitle } from './windowTitle'
 import { useEditorStore } from '@/store/editor'
+import { useProjectStore } from '@/store/project'
 import { useI18n } from 'vue-i18n'
-import { ArrowRight } from '@element-plus/icons-vue'
+import { ArrowRight, FolderOpened, Plus, Setting } from '@element-plus/icons-vue'
 import IconTooltip from '@/components/iconTooltip/index.vue'
 import DocumentStatistics from './documentStatistics.vue'
 import type { FileWordCount } from '@shared/types/files'
@@ -180,6 +225,7 @@ const props = defineProps<{
 const preferencesStore = usePreferencesStore()
 const layoutStore = useLayoutStore()
 const editorStore = useEditorStore()
+const projectStore = useProjectStore()
 const { currentFile } = storeToRefs(editorStore)
 const setReadingMode = (readOnly: boolean): void => {
   if (currentFile.value) void editorStore.SET_READ_ONLY(currentFile.value.id, readOnly)
@@ -209,7 +255,7 @@ onMounted(async () => {
 })
 
 const { titleBarStyle } = storeToRefs(preferencesStore)
-const { showTabBar } = storeToRefs(layoutStore)
+const { showTabBar, showSideBar } = storeToRefs(layoutStore)
 
 const paths = computed(() => pathBreadcrumb(props.pathname ?? '', PATH_SEPARATOR))
 

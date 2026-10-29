@@ -279,7 +279,8 @@
       "lastModified": "Gewijzigd",
       "unavailable": "—",
       "open": "Documentstatistieken openen"
-    }
+    },
+    "newDocument": "Nieuw"
   },
   "commandPalette": {
     "placeholder": "Typ een opdracht om uit te voeren",

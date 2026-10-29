@@ -279,7 +279,8 @@
       "lastModified": "修改时间",
       "unavailable": "—",
       "open": "打开文档统计"
-    }
+    },
+    "newDocument": "新建"
   },
   "commandPalette": {
     "placeholder": "输入要执行的命令",

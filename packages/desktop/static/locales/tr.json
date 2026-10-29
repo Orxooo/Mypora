@@ -279,7 +279,8 @@
       "lastModified": "Değişti",
       "unavailable": "—",
       "open": "Belge istatistiklerini aç"
-    }
+    },
+    "newDocument": "Yeni"
   },
   "commandPalette": {
     "placeholder": "Çalıştırmak için bir komut yazın",

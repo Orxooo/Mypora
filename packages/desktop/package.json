@@ -1,6 +1,6 @@
 {
   "name": "marktext",
-  "version": "0.23.0-mypora.1",
+  "version": "0.23.0-mypora.2",
   "description": "Mypora — a customized MarkText editor",
   "main": "./out/main/index.js",
   "author": {

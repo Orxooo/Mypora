@@ -695,3 +695,111 @@
     border-bottom-width: 0;
   }
 }
+
+@media screen {
+  .marktext-glass .title-bar .title {
+    padding: 0 340px 0 158px;
+  }
+
+  .marktext-glass .glass-navigation {
+    position: absolute;
+    left: 106px;
+    top: 9px;
+  }
+
+  .marktext-glass .title-bar .mac-toolbar {
+    width: auto;
+    right: 9px;
+    flex-direction: row;
+    gap: 6px;
+  }
+
+  .marktext-glass .glass-quick-actions {
+    display: flex;
+    gap: 6px;
+  }
+
+  .marktext-glass .glass-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 34px;
+    height: 34px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border: 1px solid var(--glass-rim);
+    border-radius: 12px;
+    background: var(--glass-control);
+    color: var(--editorColor);
+    font: 12px -apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif;
+    -webkit-app-region: no-drag;
+  }
+
+  .marktext-glass .glass-action svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  .marktext-glass .glass-sidebar-toggle {
+    width: 34px;
+    padding: 0;
+  }
+
+  .marktext-glass .glass-action:hover,
+  .marktext-glass .glass-action[aria-pressed='true'] {
+    background: var(--glass-selected);
+    color: var(--glass-accent);
+  }
+
+  .marktext-glass .title-bar .mac-toolbar .document-statistics-trigger.el-button.is-text {
+    margin-right: 0;
+  }
+
+  .marktext-glass .document-outline .outline-body {
+    left: 12px;
+    bottom: 12px;
+    padding: 10px;
+    border: 1px solid var(--glass-rim);
+    border-radius: 20px;
+    background: var(--glass-float);
+    backdrop-filter: blur(28px) saturate(140%);
+    box-shadow: var(--glass-shadow);
+    overflow: hidden;
+  }
+
+  .marktext-glass .side-bar-toc .el-tree-node {
+    margin-top: 4px;
+  }
+
+  .marktext-glass .side-bar-toc .el-tree-node__content {
+    min-height: 36px;
+    border-radius: 12px;
+    padding-right: 10px;
+    box-sizing: border-box;
+  }
+
+  html.marktext-glass .el-popper.is-light.mt-icon-tooltip {
+    min-height: 34px;
+    box-sizing: border-box;
+    padding: 7px 12px;
+    border-radius: 12px;
+    border-color: var(--glass-rim);
+    background: var(--glass-float);
+    backdrop-filter: blur(24px);
+  }
+
+  @media (max-width: 820px) {
+    .marktext-glass .quick-action-label {
+      display: none;
+    }
+    .marktext-glass .title-bar .title {
+      padding-right: 240px;
+    }
+    .marktext-glass .glass-action {
+      padding: 0;
+      width: 34px;
+    }
+  }
+}

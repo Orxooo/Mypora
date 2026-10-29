@@ -153,7 +153,7 @@ export const usePreferencesStore = defineStore('preferences', {
     fileSortBy: 'created',
     fileSortOrder: 'asc',
     defaultOpenMode: 'edit',
-    startUpAction: 'restoreAll',
+    startUpAction: 'blank',
     restoreLayoutState: true,
     defaultDirectoryToOpen: '',
     lastOpenedFolder: '',

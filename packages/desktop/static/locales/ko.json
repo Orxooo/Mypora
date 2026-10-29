@@ -279,7 +279,8 @@
       "lastModified": "수정됨",
       "unavailable": "—",
       "open": "문서 통계 열기"
-    }
+    },
+    "newDocument": "새 문서"
   },
   "commandPalette": {
     "placeholder": "실행할 명령을 입력하세요",

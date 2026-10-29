@@ -279,7 +279,8 @@
       "lastModified": "Geändert",
       "unavailable": "—",
       "open": "Dokumentstatistik öffnen"
-    }
+    },
+    "newDocument": "Neu"
   },
   "commandPalette": {
     "placeholder": "Befehl zum Ausführen eingeben",
